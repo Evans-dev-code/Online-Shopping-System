@@ -1,0 +1,255 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #e0f7fa; /* Light aqua background */
+    color: #004d40; /* Deep teal text color */
+    transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
+}
+
+body.dark-mode {
+    background-color: #004d40; /* Deep teal for dark mode */
+    color: #e0f7fa; /* Light aqua for text in dark mode */
+}
+
+/* Header */
+header {
+    background: linear-gradient(90deg, #1de9b6, #1dc4e9); /* Green to blue gradient */
+    color: white;
+    padding: 1em 0;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+    letter-spacing: 2px;
+}
+
+nav {
+    margin-top: 10px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    border: 2px solid transparent;
+    border-radius: 25px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+nav a:hover {
+    background-color: white;
+    color: #1dc4e9; /* Blue-green hover effect */
+    border-color: #1de9b6; /* Match green in the gradient */
+}
+
+/* Section Styling */
+.section {
+    display: none;
+    padding: 40px 20px;
+}
+
+.section.active {
+    display: block;
+}
+
+/* Home Page */
+#home {
+    text-align: center;
+    background: url('https://via.placeholder.com/1920x1080') no-repeat center center/cover;
+    color: white;
+    padding: 60px 20px;
+    position: relative;
+}
+
+#home .sticker {
+    position: absolute;
+    width: 80px; /* Size of sticker */
+    height: 80px;
+    opacity: 0.8; /* Slightly transparent */
+    transition: all 0.3s ease-in-out;
+}
+
+#home .sticker:hover {
+    transform: rotate(15deg) scale(1.2); /* Animate on hover */
+}
+
+#home .sticker1 {
+    top: 10%; /* Adjust position */
+    left: 10%;
+}
+
+#home .sticker2 {
+    top: 10%;
+    right: 10%;
+}
+
+#home .sticker3 {
+    bottom: 10%;
+    left: 10%;
+}
+
+#home .sticker4 {
+    bottom: 10%;
+    right: 10%;
+}
+
+#home .button {
+    display: inline-block;
+    padding: 15px 25px;
+    background: linear-gradient(135deg, #1dc4e9, #1de9b6); /* Gradient background */
+    color: white;
+    text-decoration: none;
+    border-radius: 25px;
+    font-weight: bold;
+    font-size: 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    transition: all 0.3s ease;
+}
+
+#home .button:hover {
+    background: linear-gradient(135deg, #1de9b6, #1dc4e9); /* Reverse gradient on hover */
+    transform: scale(1.2) rotate(-3deg); /* Slight rotation */
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+#home .button {
+    animation: fadeIn 1s ease-out;
+}
+
+/* Product Styles */
+.product-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.product {
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    width: 220px;
+    text-align: center;
+    padding: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.product img {
+    width: 100%; /* Makes the image fill the product box width */
+    height: 150px; /* Fixed height for all images */
+    object-fit: contain; /* Crops the image to fill the space */
+    border-radius: 10px; /* Optional: Add rounded corners */
+}
+
+.product button {
+    padding: 10px 15px;
+    background: #1dc4e9; /* Blue-green button */
+    color: white;
+    border: none;
+    border-radius: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.product button:hover {
+    background: #1de9b6; /* Shift to green on hover */
+    transform: scale(1.05);
+}
+
+/* Cart and Wishlist Sections */
+#cart-items,
+#wishlist-items {
+    list-style: none;
+    padding: 0;
+}
+
+#cart-items li,
+#wishlist-items li {
+    padding: 10px;
+    background: #e0f7fa; /* Light aqua */
+    margin-bottom: 5px;
+    border: 1px solid #1dc4e9;
+    border-radius: 5px;
+}
+
+#cart-total {
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+/* Login Section */
+#loginForm {
+    max-width: 400px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+#loginForm input {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+#loginForm button {
+    padding: 10px;
+    background: #1dc4e9;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#loginForm button:hover {
+    background: #1de9b6;
+}
+
+/* Dark Mode Toggle */
+#theme-toggle {
+    cursor: pointer;
+    padding: 10px;
+    background: white;
+    color: #004d40;
+    border-radius: 15px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+body.dark-mode #theme-toggle {
+    background: #004d40;
+    color: #e0f7fa;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 15px 0;
+    background: linear-gradient(90deg, #1de9b6, #1dc4e9);
+    color: white;
+    font-size: 0.9rem;
+}
